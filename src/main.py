@@ -25,6 +25,8 @@ articles = news_fetcher.fetch_news(QUERY, one_month_ago, current_date)
 stock_data = stock_predictor.fetch_stock_data()
 
 if __name__ == '__main__':
+    today_close_price = stock_data["Close"].iloc[-1]
+    print(f"本日の株価: {today_close_price}")
     if stock_data is not None:
         start_date = current_date - relativedelta(months=1)
         compound_averages = []

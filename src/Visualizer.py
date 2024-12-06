@@ -3,11 +3,13 @@ import os
 
 class Visualizer:
     def __init__(self):
+        # 現在のファイルのディレクトリ（srcフォルダ）を基準にする
+        base_dir = os.path.dirname(os.path.dirname(__file__))  # srcの1つ上を取得
         # 保存先ディレクトリ
-        self.image_dir = "../images"
+        self.image_dir = os.path.join(base_dir, "images")
         # ディレクトリが存在しない場合は作成
         os.makedirs(self.image_dir, exist_ok=True)
-
+        
     def plot_residuals(self, y_pred, residuals):
         plt.scatter(y_pred, residuals)
         plt.axhline(0, color="red", linestyle="--")
