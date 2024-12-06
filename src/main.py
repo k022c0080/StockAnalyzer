@@ -8,7 +8,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # 定数定義
-API_KEY = "1fb313cf0c4b49658908852a2950e8dc"
+API_KEY = "Ayour_api_key"
 QUERY = "AAPL"
 PERIOD = "1mo"
 current_date = datetime.today()
